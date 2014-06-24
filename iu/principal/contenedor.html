@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Recepciones</title>
+    <link rel="stylesheet" type="text/css" href="/produccion/ext-3.2.1/resources/css/ext-all.css" />
+    <!-- extensiones -->
+    <link rel="stylesheet" type="text/css" href="/produccion/ext-3.2.1/examples/ux/css/Spinner.css" />
+    <link rel="stylesheet" type="text/css" href="/produccion/ext-3.2.1/examples/ux/fileuploadfield/css/fileuploadfield.css" />
+
+
+ 	<!-- LIBS -->
+ 	  <script type="text/javascript" src="/produccion/ext-3.2.1/adapter/ext/ext-base.js"></script>
+ 	  <!--  <script type="text/javascript" src="/produccion/ext-3.2.1/ext-all-debug.js"></script> -->
+ 	  <!-- <script type="text/javascript" src="/produccion/ext-3.2.1/ext-all-debug-w-comments.js"></script> -->
+ 	  <script type="text/javascript" src="/produccion/ext-3.2.1/ext-all.js"></script>
+
+
+ 	  <!-- extensions -->
+ 	  <!-- <script type="text/javascript" src="/produccion/ext-3.2.1/examples/ux/ux-all-debug.js"></script> -->
+
+    <script type="text/javascript" src="/produccion/ext-3.2.1/examples/ux/RowEditor.js"></script>
+    <script type="text/javascript" src="/produccion/ext-3.2.1/examples/ux/Spinner.js"></script>
+    <script type="text/javascript" src="/produccion/ext-3.2.1/examples/ux/SpinnerField.js"></script>
+    <script type="text/javascript" src="/produccion/ext-3.2.1/examples/ux/fileuploadfield/FileUploadField.js"></script>
+    <script type="text/javascript" src="/produccion/ext-3.2.1/examples/ux/CheckColumn.js"></script>
+
+ 	<!-- ENDLIBS -->
+
+    <!-- configuración -->
+    <script type="text/javascript" src="/produccion/config.js"></script>
+
+    <!-- estilo -->
+    <link rel="stylesheet" type="text/css" href="/produccion/recursos/css/estilo.css" />
+
+    <!-- utilidades -->
+    <script type="text/javascript" src="/produccion/util/MonedaUtils.js"></script>
+    <script type="text/javascript" src="/produccion/iu/util/FechaUtils.js"></script>
+
+    <!-- controles -->
+    <script type="text/javascript" src="/produccion/iu/controles/Fecha.js"></script>
+    <script type="text/javascript" src="/produccion/iu/controles/Grilla.js"></script>
+    <script type="text/javascript" src="/produccion/iu/controles/Dinero.js"></script>
+
+    <!-- stores -->
+    <script type="text/javascript" src="/produccion/iu/combos/creacion.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/proveedores.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/enchapados.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/clientes.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/piezasGenericas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/unidades.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/depositos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/categoriasLaborales.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/piezas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/fichas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/lineas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/procesos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/etapas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/materiales.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/matrices.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/empleados.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/ajustesCosto.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/usuarios.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/terminaciones.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/laqueadores.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/stores/tiposPata.js"></script>
+    <!-- combos -->
+    <script type="text/javascript" src="/produccion/iu/combos/ComboFijo.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboBancos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboClientes.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboPiezas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboProcesos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboEtapas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboProcesos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboEnchapados.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboLineas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboMatrices.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboMateriales.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboEmpleados.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboFichas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboPiezasGenericas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboUnidades.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboDepositos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboCategoriasLaborales.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboProveedores.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboTerminaciones.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboLaqueadores.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboTiposPata.js"></script>
+    <script type="text/javascript" src="/produccion/iu/combos/ComboEstadosLaqueado.js"></script>
+
+    <!-- util -->
+    <script type="text/javascript" src="/produccion/iu/util/subaFoto.js"></script>
+    <!-- grid -->
+    <script type="text/javascript" src="/produccion/iu/grid/GridAtributosPieza.js"></script>
+    <!-- abm -->
+    <script type="text/javascript" src="/produccion/recursos/es_AR.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/abm.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/cabeceraDetalle.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/cabeceraDetalleConPrefijo.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/panBusquedaAbm.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/PanelFormCabeceraAbm.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/panFormDetalleAbm.js"></script>
+
+    <!-- bancos -->
+    <script type="text/javascript" src="/produccion/iu/abm/bancos/BusquedaBancos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/bancos/FormBancos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/bancos/GrillaBancos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/bancos/PanelBancos.js"></script>
+    <!-- empleados -->
+    <script type="text/javascript" src="/produccion/iu/abm/empleados/BusquedaEmpleados.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/empleados/FormEmpleados.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/empleados/GrillaEmpleados.js"></script>
+    <!-- datosReloj -->
+    <script type="text/javascript" src="/produccion/iu/abm/datosReloj/BusquedaDatosReloj.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/datosReloj/FormDatosReloj.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/datosReloj/GrillaDatosReloj.js"></script>
+
+    <!-- facturas -->
+    <script type="text/javascript" src="/produccion/iu/abm/facturas/BusquedaFacturasCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/facturas/FormFacturasCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/facturas/GrillaFacturasCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/facturas/FormFacturasDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/facturas/GrillaFacturasDet.js"></script>
+
+
+
+    <!-- líneas -->
+    <script type="text/javascript" src="/produccion/iu/abm/lineas/BusquedaLineas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/lineas/FormLineas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/lineas/GrillaLineas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/lineas/FormFichasPorLinea.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/lineas/GrillaFichasPorLinea.js"></script>
+    <!-- planillas producción -->
+    <script type="text/javascript" src="/produccion/iu/abm/planillasProduccion/BusquedaPlanillasProduccionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planillasProduccion/FormPlanillasProduccionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planillasProduccion/GrillaPlanillasProduccionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planillasProduccion/FormPlanillasProduccionDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planillasProduccion/GrillaPlanillasProduccionDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planillasProduccion/planas/BusquedaPlanProdPrensaPlanas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planillasProduccion/planas/GrillaPlanProdPrensaPlanas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planillasProduccion/planas/PanelPlanProdPrensaPlanas.js"></script>
+
+    <!-- planillas de producciÃƒÂ³n de pulido-->
+    <script type="text/javascript" src="/produccion/iu/abm/planProdPulido/BusquedaPlanProdPulido.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planProdPulido/FormPlanProdPulidoCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planProdPulido/GrillaPlanProdPulidoCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planProdPulido/FormPlanProdPulidoDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planProdPulido/GrillaPlanProdPulidoDet.js"></script>
+    <!-- planillas chapa -->
+    <script type="text/javascript" src="/produccion/iu/abm/planProdChapa/BusquedaPlanProdChap.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planProdChapa/FormPlanProdChapCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planProdChapa/GrillaPlanProdChapCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planProdChapa/FormPlanProdChapDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/planProdChapa/GrillaPlanProdChapDet.js"></script>
+    <!-- fichas -->
+    <script type="text/javascript" src="/produccion/iu/abm/fichas/BusquedaFichas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/fichas/FormFichas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/fichas/GrillaFichas.js"></script>
+    <!-- matrices -->
+    <script type="text/javascript" src="/produccion/iu/abm/matrices/FormMatrices.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/matrices/GrillaMatrices.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/matrices/FormMatrices.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/matrices/GrillaMatrices.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/matrices/BusquedaMatrices.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/matrices/FormLineasPorMatriz.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/matrices/GrillaLineasPorMatriz.js"></script>
+    <!-- proveedores -->
+    <script type="text/javascript" src="/produccion/iu/abm/proveedores/panBusquedaAbmProveedores.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/proveedores/panGrillaAbmProveedores.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/proveedores/panFormAbmProveedores.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/proveedores/FormProveedores.js"></script>
+    <!-- usuarios -->
+    <script type="text/javascript" src="/produccion/iu/abm/usuarios/panBusquedaAbmUsuarios.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/usuarios/panGrillaAbmUsuarios.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/usuarios/panFormAbmUsuarios.js"></script>
+    <!-- clientes -->
+    <script type="text/javascript" src="/produccion/iu/abm/clientes/panBusquedaAbmClientes.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/clientes/panGrillaAbmClientes.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/clientes/FormClientes.js"></script>
+    <!-- piezas -->
+    <script type="text/javascript" src="/produccion/iu/abm/piezas/ArbolAtributos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/piezas/GridAtributos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/piezas/panBusquedaAbmPiezas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/piezas/panGrillaAbmPiezas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/piezas/panFormAbmPiezas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/piezas/FormChapasPorPieza.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/piezas/GrillaChapasPorPieza.js"></script>
+    <!-- materiales -->
+    <script type="text/javascript" src="/produccion/iu/abm/materiales/panBusquedaAbmMateriales.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/materiales/GrillaMateriales.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/materiales/FormAbmMateriales.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/materiales/FormPreciosPorMaterial.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/materiales/GrillaPreciosPorMaterial.js"></script>
+
+
+    <!-- Procesos -->
+    <!-- costos -->
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/PanelBusquedaCostos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/PanelArbolCostos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/MarcoArbolCostos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/MarcoPanelHojas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/PanelProcesos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/PanelMateriales.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/PanelEtapas.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/PanelCostos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/PanelDerecho.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/GrillaInsumos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/costos/PanelValorInsumos.js"></script>
+
+    <!-- pedidos -->
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/FormPagos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/GrillaPagos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/planos/BusquedaPedidosPlanos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/planos/GrillaPedidosPlanos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/planos/PanelPedidosPlanos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/GrillaRemitosRelacionados.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/panBusquedaPedidosCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/panGrillaPedidosCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/panFormPedidosCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/panGrillaPedidosDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/panFormPedidosDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/reportes/TiposPataPendientes.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/reportes/TerminacionesPendientes.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/GrillaSinLaqueador.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/PanelGeneraRemitoLaqueador.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/laqueado/BusquedaRemLaq.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/laqueado/PanRemitosCabecera.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/laqueado/GrillaRemLaqCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/laqueado/GrillaRemLaqDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/laqueado/PantallaRemitosLaqueado.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/PanelPedidoRapido.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/eventos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/pedidos/creacion.js"></script>
+
+
+
+
+
+    <!-- ÃƒÂ³rdenes de producciÃƒÂ³n -->
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesProduccion/FormOrdenesProduccionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesProduccion/GrillaOrdenesProduccionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesProduccion/BusquedaOrdenesProduccionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesProduccion/FormOrdenesProduccionDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesProduccion/GrillaOrdenesProduccionDet.js"></script>
+
+    <!-- ÃƒÂ³rdenes de terminaciÃƒÂ³n -->
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesTerminacion/FormOrdenesTerminacionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesTerminacion/GrillaOrdenesTerminacionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesTerminacion/BusquedaOrdenesTerminacionCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesTerminacion/FormOrdenesTerminacionDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/abm/ordenesTerminacion/GrillaOrdenesTerminacionDet.js"></script>
+
+    <!-- remitos -->
+    <script type="text/javascript" src="/produccion/iu/procesos/remitos/GrillaPedidosPendientes.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/remitos/panBusquedaRemitosCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/remitos/panGrillaRemitosCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/remitos/panFormRemitosCab.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/remitos/panGrillaRemitosDet.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/remitos/RemitosDetalleForm.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/remitos/eventos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/remitos/creacion.js"></script>
+
+    <!-- precios -->
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/efectivos/BusquedaPreciosEfectivos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/efectivos/GrillaPreciosEfectivos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/efectivos/PanelPreciosEfectivos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/todos/panBusquedaAbmPrecios.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/todos/panFormAbmPrecios.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/todos/panGrillaAbmPrecios.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/comunicaciones/VentanaVariacion.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/comunicaciones/VentanaCreacion.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/comunicaciones/panBusquedaComunicaciones.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/comunicaciones/panFormAbmComunicaciones.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/comunicaciones/GrillaComunicacionesPreciosCabecera.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/comunicaciones/panFormAbmComunicacionesDetalle.js"></script>
+    <script type="text/javascript" src="/produccion/iu/procesos/precios/comunicaciones/GrillaComunicacionesPreciosDetalle.js"></script>
+
+    <!-- estadÃƒÂ­sticas -->
+    <script type="text/javascript" src="/produccion/iu/estadisticas/PanelGraficoPrecios.js"></script>
+    <script type="text/javascript" src="/produccion/iu/estadisticas/PanelGraficoMontos.js"></script>
+    <script type="text/javascript" src="/produccion/iu/estadisticas/PanelGraficoFacturacion.js"></script>
+    <script type="text/javascript" src="/produccion/iu/estadisticas/PanelGraficoRemitido.js"></script>
+    <script type="text/javascript" src="/produccion/iu/estadisticas/MejoresFichasEnUnidades.js"></script>
+    <script type="text/javascript" src="/produccion/iu/estadisticas/MejoresFichasEnMonto.js"></script>
+    <script type="text/javascript" src="/produccion/iu/estadisticas/MejoresClientesEnMonto.js"></script>    <!-- seguridad -->
+
+
+    <script type="text/javascript" src="/produccion/iu/procesos/seguridad/CambioClave.js"></script>
+
+
+
+    <!-- menÃƒÂº -->
+    <script type="text/javascript" src="/produccion/iu/principal/MenuAcordeon.js"></script>
+    <script type="text/javascript" src="/produccion/iu/principal/paneles.js"></script>
+    <script type="text/javascript" src="/produccion/iu/principal/panelesReporte.js"></script>
+    <script type="text/javascript" src="/produccion/iu/principal/PanelMenu.js"></script>
+    <script type="text/javascript" src="/produccion/iu/principal/inicio.js"></script>
+
+</head>
+<body></body>
+
+</html>
