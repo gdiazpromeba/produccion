@@ -19,6 +19,11 @@
       
       public function pedidoRapido($clienteId, $clienteNombre, $email, $telefono, $piezaId, $terminacionId, $terminacionNombre, $cantidad,
         $precioUnitario, $seña, $tipoPago);
+      
+      /**
+       * un reporte de los pedidos pendientes, con los pagos parciales realizados por cada uno
+       */
+      public function selReporteSeñas();
    } 
 
 ?>

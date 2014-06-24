@@ -92,6 +92,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/produccion/util/FechaUtils.php';
         return $max;                                       
       }   
       
+      public function selReporteSeñas(){
+      	$ret=$this->oad->selReporteSeñas();
+      	return $ret;
+      	 
+      }
+      
       public function pedidoRapido($clienteId, $clienteNombre, $email, $telefono, $piezaId, $terminacionId, $terminacionNombre, $cantidad,
         $precioUnitario, $seña, $tipoPago ){
       	

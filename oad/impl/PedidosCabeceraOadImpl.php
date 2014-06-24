@@ -208,6 +208,49 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/produccion/util/FechaUtils.php';
          $this->cierra($conexion, $stm);
          return $cuenta;
       }
+      
+      public function selReporteSeñas(){
+      	$conexion=$this->conectarse();
+      	$sql="SELECT   \n";
+      	$sql.="  CLI.CLIENTE_NOMBRE,  \n";
+      	$sql.="  PEC.PEDIDO_CABECERA_ID,   \n";
+      	$sql.="  PEC.PEDIDO_NUMERO,   \n";
+      	$sql.="  SUM(PED.PEDIDO_DETALLE_PRECIO * PED.PEDIDO_CANTIDAD) AS IMPORTE_PEDIDO  \n";
+      	$sql.="  FROM  \n";
+      	$sql.="    PEDIDOS_CABECERA PEC  \n";
+      	$sql.="    INNER JOIN PEDIDOS_DETALLE PED ON PEC.PEDIDO_CABECERA_ID=PED.PEDIDO_CABECERA_ID  \n";
+      	$sql.="    INNER JOIN CLIENTES CLI ON PEC.CLIENTE_ID=CLI.CLIENTE_ID  \n";
+      	$sql.="  WHERE  \n";
+      	$sql.="    PEC.PEDIDO_ESTADO='Pendiente'  \n";
+      	$sql.="  GROUP BY  \n";
+      	$sql.="    CLIENTE_NOMBRE,  \n";
+      	$sql.="    PEDIDO_CABECERA_ID,  \n";
+      	$sql.="    PEDIDO_NUMERO  \n";
+      	$sql.="  ORDER BY  \n";
+      	$sql.="    CLIENTE_NOMBRE,  \n";
+      	$sql.="    PEDIDO_NUMERO  \n";
+      	$stm=$this->preparar($conexion, $sql);
+      	$stm->execute();  
+      	$stm->bind_result($cliente, $pedidoCabeceraId, $pedidoNumero, $importe);
+      	$filas = array();
+      	while ($stm->fetch()) {
+      		$fila=array();
+      		$fila['cliente']=$cliente;
+      		$fila['pedidoCabeceraId']=$pedidoCabeceraId;
+      		$fila['pedidoNumero']=$pedidoNumero;
+      		$fila['importe']=$importe;
+      		$filas[$pedidoCabeceraId]=$fila;
+      		//pagos realizados
+      		$result = mysqli_query($conexion, "SELECT SUM(MONTO) AS TOTAL FROM PAGOS WHERE PEDIDO_CABECERA_ID='" . $pedidoCabeceraId . "'");
+      		if ($result && mysqli_num_rows($result) > 0){
+      		  $row = mysqli_fetch_row($result);
+              $pagos=$row['TOTAL'];      		
+      		  $fila['pagos']=$pagos;
+      		}
+      	}
+      	$this->cierra($conexion, $stm);
+      	return $filas;
+      }
 
    }
 ?>

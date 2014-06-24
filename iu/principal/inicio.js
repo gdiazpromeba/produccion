@@ -291,7 +291,7 @@ var panelEgresos = new PanelMenu({
 
     items: [
       {fieldLabel: 'Usuario', xtype: 'textfield', itemId: 'login', ref: '../login', value:'diazg'},
-      {fieldLabel: 'Clave', xtype: 'textfield', itemId: 'clave', inputType: 'password', enableKeyEvents: true, value:'marina'}
+      {fieldLabel: 'Clave', xtype: 'textfield', itemId: 'clave', inputType: 'password', enableKeyEvents: true}
     ],
 
     buttons: [

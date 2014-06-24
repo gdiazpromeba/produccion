@@ -98,8 +98,10 @@ try {
   } else if ($ultimo=='inhabilita'){
 	$exito=$svc->inhabilita($_REQUEST['id']);
 	echo json_encode($exito) ;
-  
-  
+	
+  } else if ($ultimo=='reportePagos'){
+		$arr=$svc->selReporteSeñas();
+		echo json_encode($arr);
   
   } else if ($ultimo=='pedidoRapido'){
     $clienteId=$_REQUEST['clienteId'];
