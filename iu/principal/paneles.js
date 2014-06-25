@@ -574,8 +574,8 @@ function creaTiposPataPendientes(){
 	  muestraEnPanel(ppl);
 	}
 
-function creaSeñasYPendientes(){
-  var ppl=new SeñasYPendientes();
+function creaPagosYPendientes(){
+  var ppl=new PagosYPendientes();
   quitaDePanel();
   muestraEnPanel(ppl);
 }

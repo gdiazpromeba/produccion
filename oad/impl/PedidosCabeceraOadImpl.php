@@ -222,6 +222,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/produccion/util/FechaUtils.php';
       	$sql.="    INNER JOIN CLIENTES CLI ON PEC.CLIENTE_ID=CLI.CLIENTE_ID  \n";
       	$sql.="  WHERE  \n";
       	$sql.="    PEC.PEDIDO_ESTADO='Pendiente'  \n";
+      	$sql.="    AND PEC.HABILITADO=1  \n";
       	$sql.="  GROUP BY  \n";
       	$sql.="    CLIENTE_NOMBRE,  \n";
       	$sql.="    PEDIDO_CABECERA_ID,  \n";
