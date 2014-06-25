@@ -93,7 +93,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/produccion/util/FechaUtils.php';
       }   
       
       public function selReporteSeñas(){
-      	$ret=$this->oad->selReporteSeñas();
+      	$datos=$this->oad->selReporteSeñas();
+      	$ret=array();
+      	$ret['data']=$datos;
+      	$ret['total']=count($datos);
       	return $ret;
       	 
       }

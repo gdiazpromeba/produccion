@@ -230,24 +230,27 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/produccion/util/FechaUtils.php';
       	$sql.="    CLIENTE_NOMBRE,  \n";
       	$sql.="    PEDIDO_NUMERO  \n";
       	$stm=$this->preparar($conexion, $sql);
-      	$stm->execute();  
+      	$stm->execute();
+      	$stm->store_result();  // para que el statement original no pierda los valores 
       	$stm->bind_result($cliente, $pedidoCabeceraId, $pedidoNumero, $importe);
       	$filas = array();
+      	$sql2="SELECT SUM(MONTO) AS TOTAL FROM PAGOS WHERE PEDIDO_CABECERA_ID=?";
+      	$stm2=$this->preparar($conexion, $sql2);
       	while ($stm->fetch()) {
       		$fila=array();
       		$fila['cliente']=$cliente;
       		$fila['pedidoCabeceraId']=$pedidoCabeceraId;
       		$fila['pedidoNumero']=$pedidoNumero;
       		$fila['importe']=$importe;
-      		$filas[$pedidoCabeceraId]=$fila;
-      		//pagos realizados
-      		$result = mysqli_query($conexion, "SELECT SUM(MONTO) AS TOTAL FROM PAGOS WHERE PEDIDO_CABECERA_ID='" . $pedidoCabeceraId . "'");
-      		if ($result && mysqli_num_rows($result) > 0){
-      		  $row = mysqli_fetch_row($result);
-              $pagos=$row['TOTAL'];      		
-      		  $fila['pagos']=$pagos;
-      		}
+      		$stm2->bind_param("s", $pedidoCabeceraId);
+      		$stm2->execute();
+      		$stm2->bind_result($total);
+      		$stm2->fetch();
+      		$fila['pagos']=$total;
+      		$fila['pendiente']= $importe - $total;
+      		$filas[]=$fila;
       	}
+      	$stm->free_result(); // contrapartida de store-result
       	$this->cierra($conexion, $stm);
       	return $filas;
       }

@@ -1,0 +1,7 @@
+Caught exception: Headers already sent in C:\xampp\htdocs\produccion\oad\impl\PedidosCabeceraOadImpl.php on line 255. Cannot send log data to FirePHP. You must have Output Buffering enabled via ob_start() or output_buffering ini directive.n#0 C:\xampp\php\pear\FirePHPCore\FirePHP.class.php(757): FirePHP->newException('Headers already...')
+#1 [internal function]: FirePHP->fb(' total=')
+#2 C:\xampp\php\pear\FirePHPCore\fb.php(64): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\produccion\oad\impl\PedidosCabeceraOadImpl.php(256): fb(' total=')
+#4 C:\xampp\htdocs\produccion\svc\impl\PedidosCabeceraSvcImpl.php(96): PedidosCabeceraOadImpl->selReporteSeñas()
+#5 C:\xampp\htdocs\produccion\svc\conector\pedidosCabecera.php(103): PedidosCabeceraSvcImpl->selReporteSeñas()
+#6 {main}

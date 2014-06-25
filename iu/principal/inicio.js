@@ -128,7 +128,7 @@ var panelEgresos = new PanelMenu({
 
       data:  [
         [['pedidos.png', 'Pedidos', creaPanPedidos], ['pedidosPendientes.png', 'Patas Pendientes', creaTiposPataPendientes]],
-        [['pedidosPendientes.png', 'Chapas pendientes', creaPanTerminacionesPendientes], ['remitos.png', 'Pedido Rápido', creaPanPedidoRapido]],
+        [['pedidosPendientes.png', 'Señas y pendientes', creaSeñasYPendientes], ['remitos.png', 'Pedido Rápido', creaPanPedidoRapido]],
 
       ]
 
