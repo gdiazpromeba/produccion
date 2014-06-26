@@ -43,7 +43,7 @@
 	$fecha=FechaUtils::cadenaDMAaObjeto($_REQUEST['fecha']);
 	$bean->setFecha($fecha);
 	$bean->setMonto($_REQUEST['monto']);
-	$bean->setTipo($_REQUEST['comboTiposPago']);
+	$bean->setTipo($_REQUEST['tipoPago']);
 	$bean->setObservaciones($_REQUEST['observaciones']);
 	$exito=$svc->inserta($bean);
 	echo json_encode($exito) ;
@@ -55,7 +55,7 @@
 	$fecha=FechaUtils::cadenaDMAaObjeto($_REQUEST['fecha']);
 	$bean->setFecha($fecha);
 	$bean->setMonto($_REQUEST['monto']);
-	$bean->setTipo($_REQUEST['comboTiposPago']);
+	$bean->setTipo($_REQUEST['tipoPago']);
 	$bean->setObservaciones($_REQUEST['observaciones']);
 	
 	$exito=$svc->actualiza($bean);
